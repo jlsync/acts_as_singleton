@@ -43,7 +43,7 @@ module ActiveRecord
             first || create
           end
 
-          def find(*)
+          def find(...)
             unless caller.first.include?("lib/active_record")
               raise NoMethodError,
                 "private method `find' called for #{inspect}"
@@ -51,7 +51,7 @@ module ActiveRecord
             super
           end
 
-          def find_by_sql(sql, binds = [], preparable: nil, &block)
+          def find_by_sql(...)
             unless caller.first.include?("lib/active_record")
               raise NoMethodError,
                 "private method `find_by_sql' called for #{inspect}"
